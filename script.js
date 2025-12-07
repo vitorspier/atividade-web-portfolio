@@ -1,50 +1,50 @@
-// Aguarda o DOM carregar completamente
 document.addEventListener("DOMContentLoaded", function() {
     
-    // --- LÓGICA DO TEMA CLARO/ESCURO [cite: 63] ---
+    // --- LÓGICA DO TEMA CLARO/ESCURO ---
     const btnTema = document.getElementById("btn-tema");
     const body = document.body;
 
+    // Verifica se há preferência salva (opcional, mas bom pra UX)
+    // Se quiser simplificar, pode remover essa parte inicial
+    
     btnTema.addEventListener("click", function() {
-        // Alterna a classe 'dark-theme' no corpo do site
         body.classList.toggle("dark-theme");
         
-        // Muda o texto do botão conforme o tema
         if(body.classList.contains("dark-theme")) {
-            btnTema.innerText = "Tema Claro";
+            btnTema.innerText = "Modo Claro";
         } else {
-            btnTema.innerText = "Tema Escuro";
+            btnTema.innerText = "Modo Escuro";
         }
     });
 
-    // --- VALIDAÇÃO E ENVIO DO FORMULÁRIO [cite: 56, 58, 60] ---
+    // --- VALIDAÇÃO E ENVIO DO FORMULÁRIO ---
     const form = document.getElementById("form-contato");
 
-    form.addEventListener("submit", function(event) {
-        event.preventDefault(); // Impede o recarregamento da página
+    if(form) { // Verifica se o formulário existe na página
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
 
-        // Captura os valores dos campos
-        const nome = document.getElementById("nome").value;
-        const email = document.getElementById("email").value;
-        const mensagem = document.getElementById("mensagem").value;
+            const nome = document.getElementById("nome").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const mensagem = document.getElementById("mensagem").value.trim();
 
-        // Validação 1: Campos Vazios
-        if (nome === "" || email === "" || mensagem === "") {
-            alert("Por favor, preencha todos os campos!");
-            return;
-        }
+            // Validação 1: Campos Vazios
+            if (!nome || !email || !mensagem) {
+                alert("Por favor, preencha todos os campos do formulário.");
+                return;
+            }
 
-        // Validação 2: Formato de E-mail (Regex Simples) [cite: 59]
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            alert("Por favor, insira um e-mail válido (ex: usuario@dominio.com).");
-            return;
-        }
+            // Validação 2: Formato de E-mail
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert("Por favor, insira um endereço de e-mail válido.");
+                return;
+            }
 
-        // Simulação de Envio bem-sucedido
-        alert(`Obrigado, ${nome}! Sua mensagem foi enviada com sucesso.`);
-        
-        // Limpar o formulário após o envio
-        form.reset();
-    });
+            // Simulação de Sucesso
+            alert(`Obrigado pelo contato, ${nome}! \n\nSua mensagem foi "enviada" com sucesso (Simulação).`);
+            
+            form.reset();
+        });
+    }
 });
