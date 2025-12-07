@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio | Seu Nome</title> <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Portfólio</div>
+            <ul class="nav-links">
+                <li><a href="#sobre">Sobre Mim</a></li>
+                <li><a href="#formacao">Formação</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><button id="btn-tema">Mudar Tema</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="sobre" class="secao">
+            <h1>Sobre Mim</h1>
+            <p>Olá! Eu sou o [Seu Nome].</p>
+            <p>Sou apaixonado por tecnologia. Aqui você pode escrever sobre seus hobbies, quem você é e seus objetivos.</p>
+            </section>
+
+        <section id="formacao" class="secao">
+            <h1>Formação</h1>
+            <div class="card">
+                <h3>Curso Superior em Tecnologia</h3>
+                <p>Instituição: [Nome da Faculdade]</p>
+                <p>Ano de Conclusão: Em andamento</p>
+            </div>
+            <div class="card">
+                <h3>Inglês Técnico</h3>
+                <p>Nível: Intermediário</p>
+            </div>
+        </section>
+
+        <section id="portfolio" class="secao">
+            <h1>Meus Projetos</h1>
+            <div class="galeria">
+                <div class="projeto-item">
+                    <h3>Projeto 1</h3>
+                    <p>Descrição breve do projeto.</p>
+                    <a href="#">Ver no GitHub</a>
+                </div>
+                <div class="projeto-item">
+                    <h3>Projeto 2</h3>
+                    <p>Descrição breve do projeto.</p>
+                    <a href="#">Ver no GitHub</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="secao">
+            <h1>Contato</h1>
+            <form id="form-contato">
+                <div class="campo">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" placeholder="Digite seu nome">
+                </div>
+                
+                <div class="campo">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" placeholder="email@dominio.com">
+                </div>
+
+                <div class="campo">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" rows="5" placeholder="Sua mensagem..."></textarea>
+                </div>
+
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por [Seu Nome] - 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

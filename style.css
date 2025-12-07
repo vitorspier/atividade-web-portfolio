@@ -1,0 +1,127 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Cores do Tema Padrão (Claro) */
+:root {
+    --bg-color: #f4f4f4;
+    --text-color: #333;
+    --header-bg: #2c3e50;
+    --header-text: #fff;
+    --card-bg: #fff;
+}
+
+/* Classe para Tema Escuro (Sugestão Item 5 do PDF) */
+.dark-theme {
+    --bg-color: #1a1a1a;
+    --text-color: #f4f4f4;
+    --header-bg: #000;
+    --header-text: #ccc;
+    --card-bg: #333;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: 0.3s; /* Suaviza a troca de tema */
+    padding-top: 60px; /* Espaço para o menu fixo */
+}
+
+/* Estilo do Menu Fixo */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--header-text);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+button#btn-tema {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Estilo das Seções */
+.secao {
+    padding: 50px 20px;
+    min-height: 80vh; /* Ocupa quase a tela toda */
+    border-bottom: 1px solid #ccc;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: var(--header-bg); /* Título na cor do tema */
+}
+
+/* Estilo dos Cards (Formação e Projetos) */
+.card, .projeto-item {
+    background-color: var(--card-bg);
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Estilo do Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+button[type="submit"] {
+    background-color: #27ae60;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: #219150;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--header-bg);
+    color: var(--header-text);
+}
